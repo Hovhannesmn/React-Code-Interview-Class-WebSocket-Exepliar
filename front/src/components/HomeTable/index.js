@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import Table from 'react-bootstrap/Table';
+
+import Aux from '../../hoc/Aux/Aux';
 
 class HomeTable extends Component {
   constructor( props ) {
@@ -7,12 +10,18 @@ class HomeTable extends Component {
 
   render() {
     const keys = Object.keys(this.props.item);
+    let keys3 = keys;
     return (
-      keys.map(key => (
-        <li key={key}>
-          {this.props.item[key]}
-        </li>
-      ))
+      <tr>
+        {
+          keys3.map(key => (
+            <td key={key}>
+              {this.props.item[key]}
+            </td>
+          ))
+        }
+      </tr>
+
     );
   }
 }
