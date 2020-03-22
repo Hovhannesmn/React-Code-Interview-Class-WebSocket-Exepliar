@@ -1,5 +1,0 @@
-node_modules/
-.idea/
-front/package-lock.json/
-backend-websocket/.idea/
-backend-websocket/.package-lock.json/

@@ -33,9 +33,25 @@ io.on('connection', socket => {
   });
 
   setInterval(() => {
-    const randomObject = getRandomString(3, 4)().map(item => ({[item]: makeid(56)}));
-    const staticObject = getStaticString().map(item => ({ [item]: item }));
-    // socket.emit('new message', getStaticString().concat(getRandomString(3,3)()));
+    let i = 0;
+    const randomObject = getRandomString(3, 3)()
+      .map(item => (
+        {
+          id: i++,
+          firstName: item,
+          lastName: makeid(8),
+          userName: makeid(6),
+        }
+        )
+      );
+
+    const staticObject = getStaticString().map(item => ({
+      id: i++,
+      firstName: item,
+      lastName: item,
+      userName: item,
+    }));
+
     socket.emit('new message', randomObject.concat(staticObject));
   }, 4000)
 });

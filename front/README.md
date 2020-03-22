@@ -1,1 +1,0 @@
-My app for simple structure React classes
