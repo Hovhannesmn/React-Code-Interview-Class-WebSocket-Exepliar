@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+
 import HomeTable from '../../components/HomeTable';
+
 import Table from 'react-bootstrap/Table';
-import 'bootstrap/dist/css/bootstrap.css';
 
 import { SocketContext } from '../../hoc/WrappedSocketManager';
 import Aux from '../../hoc/Aux/Aux';
@@ -13,8 +14,6 @@ class Home extends Component {
   }
   static contextType = SocketContext;
 
-
-  // {/*<ul>{(this.props.reportJson || []).map((item, key) => <HomeTable key={key} item={item} />)}</ul>*/}
   render() {
     debugger
     return (
@@ -30,7 +29,9 @@ class Home extends Component {
             </thead>
             <tbody>
             {
-              console.log(this.context, "this§contesasfas")
+              this.context.map((item, key) => (
+                <HomeTable key={key} item={item} />
+              ))
             }
 
             {

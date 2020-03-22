@@ -7,12 +7,13 @@ export const SocketContext = React.createContext({
   prices: {}
 });
 
-// export const useWebsocket = () => React.useContext(SocketContext);
+/*for hooks*/
+export const useWebsocket = () => React.useContext(SocketContext);
 
 export class WrappedSocketManager extends React.Component {
 
   state = {
-    prices: {}
+    prices: [],
   };
 
   socket = null;
