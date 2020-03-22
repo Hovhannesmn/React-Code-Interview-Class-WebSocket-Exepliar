@@ -40,9 +40,9 @@ class App extends Component {
     return (
       <div>
         <SocketManager>
-        <Layout>
-          {routes}
-        </Layout>
+          <Layout>
+            {routes}
+          </Layout>
         </SocketManager>
       </div>
     );

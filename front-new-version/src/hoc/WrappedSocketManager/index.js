@@ -37,7 +37,7 @@ export class WrappedSocketManager extends React.Component {
 
       // Component state updates
       this.setState({
-        prices: payload.markets
+        prices: payload,
       });
     });
   }

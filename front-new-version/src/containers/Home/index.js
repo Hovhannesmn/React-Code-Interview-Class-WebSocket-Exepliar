@@ -29,7 +29,7 @@ class Home extends Component {
             </thead>
             <tbody>
             {
-              this.context.map((item, key) => (
+              (this.context.prices || []).map((item, key) => (
                 <HomeTable key={key} item={item} />
               ))
             }
